@@ -161,8 +161,34 @@ leave sentence rhythm and word choice alone.
 
 ## Disclosure
 
-Posts drafted or substantially edited with AI help set `assisted = true` in the
-frontmatter. Set it honestly; err toward marking it.
+Every LLM-assisted post is prefaced and summarised. Two frontmatter fields:
+
+```toml
+assisted = true
+assisted_note = """
+I set it off to dig through the build logs for the actual numbers, which
+turned up two things I had wrong. The argument and the mistakes are mine.
+"""
+```
+
+`assisted = true` renders *"Written with LLM assistance. Details at end."* in
+italics under the post metadata, linking to a **Disclaimer** section rendered
+after the post body from `assisted_note`.
+
+Set `assisted` honestly and err toward marking it. Substantive editing counts,
+not just drafting.
+
+**`assisted_note` must be specific to that post.** Say what was actually
+delegated — what I asked it to dig up, what it drafted, what it got wrong, what
+stayed mine. "This post was written with AI" tells the reader nothing and is
+worse than no disclosure, because it looks like a compliance checkbox. If a
+post's note would be interchangeable with another post's note, it's not
+finished.
+
+Mechanics live in `layouts/_partials/post_meta.html` (preface) and
+`extend_post_content.html` (disclaimer), styled by
+`assets/css/extended/assisted.css`. The preface is guarded by `eq page .` so it
+does not leak into list views — keep that guard if you touch it.
 
 ## Publishing
 

@@ -1,0 +1,44 @@
+{{- /*
+  Override of PaperMod's post_meta.html.
+
+  Identical to the theme's version, plus the LLM-assistance preface line that
+  renders under the post metadata when a page sets `assisted = true`.
+  If the theme's upstream post_meta.html changes, re-sync the block above the
+  marker comment and keep the block below it.
+*/ -}}
+{{- $scratch := newScratch }}
+
+{{- if not .Date.IsZero -}}
+    {{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default ":date_long" site.Params.DateFormat)))) }}
+{{- end }}
+
+{{- if (.Param "ShowReadingTime") -}}
+    {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime)))) }}
+{{- end }}
+
+{{- if (.Param "ShowWordCount") -}}
+    {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "words" .WordCount | default (printf "%d words" .WordCount)))) }}
+{{- end }}
+
+{{- if not (.Param "hideAuthor") -}}
+    {{- with (partial "author.html" .) }}
+        {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .)) }}
+    {{- end }}
+{{- end }}
+
+{{- with ($scratch.Get "meta") }}
+    {{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
+{{- end -}}
+
+{{- /* ---- local addition below this line ---- */ -}}
+{{- /*
+  `eq page .` is load-bearing: this partial is reused for each entry in list
+  views (home, archives, tags). Without it the preface leaks into those
+  listings, pointing at a #llm-disclaimer anchor that only exists on the
+  post's own page.
+*/ -}}
+{{- if and .IsPage .Params.assisted (eq page .) }}
+<div class="assisted-preface">
+  Written with LLM assistance. <a href="#llm-disclaimer">Details at end.</a>
+</div>
+{{- end }}

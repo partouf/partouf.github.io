@@ -1,0 +1,20 @@
+{{- /*
+  Closing LLM-assistance disclaimer. Renders after the post body, inside the
+  article, for any page with `assisted = true`.
+
+  The text comes from the page's `assisted_note` frontmatter and should say
+  what the LLM actually did on THIS post -- what it was asked to dig up, what
+  it generated, what it got wrong. A generic note tells the reader nothing.
+  The fallback below is deliberately vague so an unfilled note is obvious.
+*/ -}}
+{{- if and .IsPage .Params.assisted }}
+<section class="llm-disclaimer" id="llm-disclaimer">
+  <h2>Disclaimer</h2>
+  {{ with .Params.assisted_note }}
+    {{/* RenderString with display=block keeps the wrapping <p>; markdownify strips it. */}}
+    {{ $.RenderString (dict "display" "block") . }}
+  {{ else }}
+    <p>This article was a collaboration between a human and an LLM.</p>
+  {{ end }}
+</section>
+{{- end }}

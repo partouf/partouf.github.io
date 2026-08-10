@@ -1,0 +1,46 @@
+/* LLM-assistance preface, under the post title metadata. */
+.assisted-preface {
+    margin-top: 6px;
+    font-style: italic;
+}
+
+.assisted-preface a {
+    box-shadow: 0 1px 0 var(--secondary);
+}
+
+/* Closing disclaimer, after the post body. */
+.llm-disclaimer {
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+    margin: 40px auto 0;
+    padding: 0 var(--gap);
+    color: var(--secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.llm-disclaimer h2 {
+    margin: 0 0 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.llm-disclaimer p {
+    margin: 0 0 10px;
+}
+
+.llm-disclaimer p:last-child {
+    margin-bottom: 0;
+}
+
+/* Sits above the tag list, so give it a rule to separate the two. */
+.llm-disclaimer::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-bottom: 16px;
+    background: var(--border);
+}

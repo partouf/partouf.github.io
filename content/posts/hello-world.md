@@ -5,6 +5,13 @@ draft = false
 tags = ['meta']
 summary = 'A placeholder post, and a short note on how this site is put together.'
 assisted = true
+assisted_note = """
+This one is mostly scaffolding rather than writing. I asked an LLM to set up
+the Hugo site, work out the GitHub Pages deployment, and read through a decade
+of my old WordPress posts to reconstruct how I used to write. It drafted this
+placeholder from that. The setup decisions, and anything wrong with them, are
+mine.
+"""
 +++
 
 This is a placeholder. Delete it, or rewrite it into something real.
