@@ -7,6 +7,12 @@ hugo_stats.json
 # Local Claude Code settings (machine-specific)
 .claude/settings.local.json
 
+# WordPress exports -- source material for voice reference, never publish.
+# The old blog is private; committing these to a public repo would expose it.
+*[Ww]ord[Pp]ress*.xml
+*[Ww]ord[Pp]ress*export*
+/import/
+
 # Editor / OS noise
 .DS_Store
 *.swp
