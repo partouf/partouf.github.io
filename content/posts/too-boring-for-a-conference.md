@@ -7,11 +7,10 @@ summary = "There's a list of things I've been meaning to talk about, and now a s
 
 assisted = true
 assisted_note = """
-The idea was mine — the list, and the schedule I intend to keep — and I asked an
-LLM to draft a post around it. Its attempts kept coming out tidy and about three
-times too long, full of closing lines I would never say out loud, so most of
-what happened after that was me deleting. The last two lines are its wording and
-I kept them. The schedule is my idea and will be my fault.
+Concept by Partouf. First drafts by Claude — three of them, each about three
+times too long and full of closing lines Partouf would never say out loud.
+Cutting, rewriting and final text by Partouf. The last two lines are Claude's
+wording, kept as-is. The schedule is Partouf's idea and will be Partouf's fault.
 """
 +++
 
