@@ -11,7 +11,8 @@ summary = ''
 assisted = false
 
 # Say what the LLM ACTUALLY did on this specific post -- what it was asked to
-# dig up, what it generated, what it got wrong, and what stayed yours.
+# dig up, what it drafted, what it got wrong, what stayed mine.
+# Written in first person: "I" is me, the LLM is "it", never "we".
 # Boilerplate defeats the point. Markdown is allowed.
 assisted_note = """
 """

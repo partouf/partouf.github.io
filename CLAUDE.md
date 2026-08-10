@@ -28,6 +28,26 @@ it, restructure it, tighten it, and push back where the reasoning is weak.
 Do not write a whole post from a one-line prompt unless I explicitly ask. A post
 generated from nothing reads like it was generated from nothing.
 
+### Pronouns — hard rule
+
+**"I", "me", "my", "mine" always mean me, the human author.** Everywhere: post
+bodies, disclaimers, footnotes, captions, commit messages in the published
+sense. No exceptions.
+
+The LLM is always third person — "an LLM", "it". Never write the LLM as "I".
+Never write a sentence where the reader has to work out which of us is
+speaking.
+
+**"We" means me and the reader**, which is an established habit in my writing
+("we can rewrite this code in a lot of ways", "why did we do this again?").
+Do not repurpose it to mean me-and-the-LLM. If a sentence needs to describe
+joint work with the LLM, name it explicitly: "I asked it to...", "it turned
+up...", not "we found".
+
+This matters most in `assisted_note`, where the temptation is strongest and
+the ambiguity does the most damage — a disclaimer the reader can't parse
+attribution from is worse than none.
+
 Things I'd rather you did:
 
 - Tell me when an argument doesn't hold up. That's more useful than prose.
@@ -184,6 +204,9 @@ stayed mine. "This post was written with AI" tells the reader nothing and is
 worse than no disclosure, because it looks like a compliance checkbox. If a
 post's note would be interchangeable with another post's note, it's not
 finished.
+
+Write it in my voice, first person, per the pronoun rule above: "I" is me, the
+LLM is "it". The note is my account of what happened, not the LLM's.
 
 Mechanics live in `layouts/_partials/post_meta.html` (preface) and
 `extend_post_content.html` (disclaimer), styled by
