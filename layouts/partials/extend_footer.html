@@ -1,0 +1,18 @@
+{{- /* Disclosure note for posts drafted with AI help (assisted = true). */ -}}
+{{- if and .IsPage .Params.assisted }}
+<div class="assisted-note">
+  This post was drafted or substantially edited with AI assistance. The ideas
+  and the final call on every sentence are mine.
+</div>
+<style>
+  .assisted-note {
+    max-width: var(--main-width);
+    margin: 0 auto 2rem;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--tertiary);
+    color: var(--secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+</style>
+{{- end }}

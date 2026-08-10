@@ -1,0 +1,83 @@
+baseURL = 'https://partouf.github.io/'
+locale = 'en-us'
+title = 'partouf'
+theme = 'PaperMod'
+
+enableRobotsTXT = true
+enableEmoji = true
+buildDrafts = false
+buildFuture = false
+
+# Pretty URLs (/posts/my-post/). GitHub Pages resolves directory
+# indexes correctly, so this works as-is. If you ever move to a plain
+# object-storage bucket that does NOT, set uglyURLs = true and add
+# redirects -- changing it after publishing breaks existing links.
+uglyURLs = false
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+# Needed for PaperMod's built-in fuzzy search page.
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[params]
+  env = 'production'
+  description = 'Notes on compilers, low-level code, and whatever else.'
+  author = 'partouf'
+  defaultTheme = 'auto'      # follows the reader's OS light/dark setting
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = true
+  ShowToc = true
+  TocOpen = false
+  ShowShareButtons = false   # no third-party share widgets = no trackers
+
+  [params.homeInfoParams]
+    Title = 'Hello'
+    Content = 'Notes on compilers, low-level code, and whatever else holds my attention. Mostly written by me, sometimes with help.'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/partouf'
+
+  [[params.socialIcons]]
+    name = 'rss'
+    url = 'index.xml'
+
+[menu]
+  [[menu.main]]
+    identifier = 'posts'
+    name = 'Posts'
+    url = '/posts/'
+    weight = 10
+
+  [[menu.main]]
+    identifier = 'archives'
+    name = 'Archive'
+    url = '/archives/'
+    weight = 20
+
+  [[menu.main]]
+    identifier = 'tags'
+    name = 'Tags'
+    url = '/tags/'
+    weight = 30
+
+  [[menu.main]]
+    identifier = 'search'
+    name = 'Search'
+    url = '/search/'
+    weight = 40
+
+[markup]
+  [markup.highlight]
+    noClasses = false        # use Chroma CSS classes so dark mode works
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    tabWidth = 4
