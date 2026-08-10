@@ -44,8 +44,9 @@ Do not repurpose it to mean me-and-the-LLM. If a sentence needs to describe
 joint work with the LLM, name it explicitly: "I asked it to...", "it turned
 up...", not "we found".
 
-This matters most in `assisted_note`, where the temptation is strongest and
-the ambiguity does the most damage — a disclaimer the reader can't parse
+This rule covers the post body. `assisted_note` is deliberately outside it and
+is written as third-person credits instead — see [Disclosure](#disclosure). The
+underlying point is the same either way: a disclaimer the reader can't parse
 attribution from is worse than none.
 
 Things I'd rather you did:
@@ -205,8 +206,21 @@ worse than no disclosure, because it looks like a compliance checkbox. If a
 post's note would be interchangeable with another post's note, it's not
 finished.
 
-Write it in my voice, first person, per the pronoun rule above: "I" is me, the
-LLM is "it". The note is my account of what happened, not the LLM's.
+The note itself is credits, not prose — third person, naming both parties:
+
+```toml
+assisted_note = """
+Concept by Partouf. First drafts by Claude, three of them, each too long.
+Cutting and final text by Partouf. The closing line is Claude's, kept as-is.
+"""
+```
+
+The pronoun rule above governs the **post body**. The note is the one place
+that steps outside it, because credits are unambiguous about who did what in a
+way "I" and "it" have to work at. Name me as Partouf and the LLM as Claude (or
+whichever model it was) — don't fall back to "we" or to an unattributed passive
+("was drafted with AI help"), which loses exactly the information the note
+exists to carry.
 
 Mechanics live in `layouts/_partials/post_meta.html` (preface) and
 `extend_post_content.html` (disclaimer), styled by
