@@ -121,7 +121,11 @@ Never end with a paragraph that summarises the post back to the reader.
   forced.
 - Emphasis by capitalising a word mid-sentence: "Actually rewriting", "I do Not
   feel straight". Keep this — it's a tic, but it's the right tic.
-- `;-)` not 🙂. Old-school emoticons, no emoji.
+- Emoji are rare and load-bearing. Only when an actual emotion needs conveying
+  and the words alone won't carry it — never as decoration, punctuation, or
+  tone-softening. Default to none.
+- The frequent `;-)` in the old posts is period texture, not a current habit.
+  Don't sprinkle emoticons in to sound like 2010.
 
 ### Later-period structure (2015+)
 
